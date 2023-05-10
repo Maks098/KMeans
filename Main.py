@@ -71,9 +71,14 @@ for ttt in range(1000):
     for b in range(len(groups)):
         for oo in groups[b].listOfElements:
             print("Do grupy "+str(b)+" należy: "+str(oo.speciment))
+            sum=0
+        for ooo in groups[b].listOfElements:
+            for rrr in range(len(centroids[0])):
+                sum=sum+pow(float(oo.inputarray[rrr])-float(ooo.inputarray[rrr]),2)
+        print("Suma kwadratów odległości dla grupy " + str(b) + " wynosi: "+str(sum))
 
-    # x = input("Czy chcesz wykonać kolejną turę uczenia?(y/n)")
-    # if x=="n":
-    #    exit(0)
+    x = input("Czy chcesz wykonać kolejną turę uczenia?(y/n)")
+    if x=="n":
+        exit(0)
 
 
